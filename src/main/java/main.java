@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
@@ -8,7 +9,38 @@ public class main {
 
         //버블정렬
         bubbleSort();
+        
+        //삽입정렬
+        insertSort();
 
+    }
+
+    private static void insertSort() {
+        /*
+         - 삽입정렬
+         - 정렬이 모두 되어있다는 가정하에 시간복잡도는 O(n)
+         - 기본적인 삽입정렬은 O(n^2)이다
+         */
+
+        int n=0;
+        int[] array = new int[101];
+        int j=0, temp=0;
+        for (int i = 0; i < 100; i++) {
+            array[i] = i;
+        }
+
+        for (int i = 0; i < n; i++) {
+            j = i;
+            while (j > 0 && array[j - 1] > array[j]) {
+                temp = array[j - 1];
+                array[j - 1] = array[j];
+                array[j] = temp;
+                j--;
+            }
+        }
+        for (int i = 0; i < 100; i++) {
+            System.out.println(array[i]);
+        }
     }
 
     private static void bubbleSort() {
