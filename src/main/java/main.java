@@ -13,7 +13,10 @@ public class main {
         //삽입정렬
         insertSort();
 
+
+
     }
+
 
     private static void insertSort() {
         /*
